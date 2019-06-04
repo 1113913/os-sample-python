@@ -1,10 +1,13 @@
 from flask import Flask
+import sys
+
 application = Flask(__name__)
 
-@application.route("/log")
+@application.route("/fire")
 def log():
-    print("TEST LOG")
-    return "Test Log"
+    sys.stdout.write("ERROR\n")
+    sys.stdout.flush()
+    return "Firing the policy .."
 
 @application.route("/")
 def hello():
